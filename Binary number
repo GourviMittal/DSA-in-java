@@ -1,0 +1,12 @@
+class Result{ 
+    static int decimalToBinary(int n){ 
+       if(n==0){
+           return 0;
+       } 
+        if(n==1){
+            return 1;
+        }
+        int t=decimalToBinary (n/2) *10+(n%2);
+        return t;
+    } 
+}
