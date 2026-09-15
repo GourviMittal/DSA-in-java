@@ -1,0 +1,21 @@
+static int countSubarrays(int[] arr, int k) {
+
+    int left = 0;
+    int sum = 0;
+    int count = 0;
+
+    for (int right = 0; right < arr.length; right++) {
+
+        sum += arr[right];
+
+        while (sum > k) {
+            sum -= arr[left];
+            left++;
+        }
+
+        // Number of valid subarrays ending at right
+        count += right - left + 1;
+    }
+
+    return count;
+}
