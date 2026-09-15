@@ -1,0 +1,18 @@
+static int countNodes(CNode head) {
+
+    if (head == null)
+        return 0;
+
+    int count = 0;
+
+    CNode temp = head;
+
+    do {
+
+        count++;
+        temp = temp.next;
+
+    } while (temp != head);
+
+    return count;
+}
