@@ -1,0 +1,24 @@
+static CNode insertBeginning(
+    CNode head,
+    int value
+) {
+
+    CNode newNode = new CNode(value);
+
+    if (head == null) {
+
+        newNode.next = newNode;
+        return newNode;
+    }
+
+    CNode temp = head;
+
+    while (temp.next != head) {
+        temp = temp.next;
+    }
+
+    newNode.next = head;
+    temp.next = newNode;
+
+    return newNode;
+}
