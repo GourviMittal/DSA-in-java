@@ -1,0 +1,68 @@
+abstract class Animal {
+    // Encapsulation
+    private String name;
+
+    Animal(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Abstraction
+    abstract void sound();
+
+    void display() {
+        System.out.println("Animal: " + name);
+    }
+}
+
+// Inheritance
+class Dog extends Animal {
+
+    Dog(String name) {
+        super(name);
+    }
+
+    // Polymorphism - method overriding
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+
+    Cat(String name) {
+        super(name);
+    }
+
+    @Override
+    void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        // Polymorphism
+        Animal a1 = new Dog("Tommy");
+        Animal a2 = new Cat("Kitty");
+
+        a1.display();
+        a1.sound();
+
+        a2.display();
+        a2.sound();
+
+        // Encapsulation
+        a1.setName("Bruno");
+        System.out.println(a1.getName());
+    }
+}
