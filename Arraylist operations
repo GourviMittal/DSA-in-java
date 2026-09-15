@@ -1,0 +1,34 @@
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        ArrayList<Integer> list = new ArrayList<>();
+
+        // ADD
+        list.add(10);
+        list.add(20);
+        list.add(30);
+
+        System.out.println(list);
+
+        // RETRIEVE
+        System.out.println(list.get(1));
+
+        // UPDATE
+        list.set(1, 25);
+
+        // REMOVE
+        list.remove(Integer.valueOf(10));
+
+        // CHECK
+        System.out.println(list.contains(25));
+
+        // SIZE
+        System.out.println(list.size());
+
+        // INDEX
+        System.out.println(list.indexOf(25));
+    }
+}
