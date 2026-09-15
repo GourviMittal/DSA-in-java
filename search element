@@ -1,0 +1,18 @@
+static boolean search(CNode head, int target) {
+
+    if (head == null)
+        return false;
+
+    CNode temp = head;
+
+    do {
+
+        if (temp.data == target)
+            return true;
+
+        temp = temp.next;
+
+    } while (temp != head);
+
+    return false;
+}
