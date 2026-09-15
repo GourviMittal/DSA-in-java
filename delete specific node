@@ -1,0 +1,45 @@
+static CNode deleteNode(
+    CNode head,
+    int value
+) {
+
+    if (head == null)
+        return null;
+
+    // Only one node
+    if (
+        head.data == value &&
+        head.next == head
+    ) {
+        return null;
+    }
+
+    // Delete head
+    if (head.data == value) {
+
+        CNode last = head;
+
+        while (last.next != head) {
+            last = last.next;
+        }
+
+        last.next = head.next;
+
+        return head.next;
+    }
+
+    CNode current = head;
+
+    while (
+        current.next != head &&
+        current.next.data != value
+    ) {
+        current = current.next;
+    }
+
+    if (current.next.data == value) {
+        current.next = current.next.next;
+    }
+
+    return head;
+}
