@@ -1,0 +1,23 @@
+static void reversePrint(CNode head) {
+
+    if (head == null)
+        return;
+
+    reversePrintHelper(head, head);
+}
+
+static void reversePrintHelper(
+    CNode current,
+    CNode head
+) {
+
+    if (current.next == head) {
+
+        System.out.print(current.data + " ");
+        return;
+    }
+
+    reversePrintHelper(current.next, head);
+
+    System.out.print(current.data + " ");
+}
