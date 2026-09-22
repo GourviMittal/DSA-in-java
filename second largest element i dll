@@ -1,0 +1,28 @@
+static int secondLargest(DNode head) {
+
+    int largest = Integer.MIN_VALUE;
+    int second = Integer.MIN_VALUE;
+
+    DNode temp = head;
+
+    while (temp != null) {
+
+        if (temp.data > largest) {
+
+            second = largest;
+            largest = temp.data;
+        }
+
+        else if (
+            temp.data > second &&
+            temp.data != largest
+        ) {
+
+            second = temp.data;
+        }
+
+        temp = temp.next;
+    }
+
+    return second;
+}
