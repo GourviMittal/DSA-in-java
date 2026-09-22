@@ -1,0 +1,9 @@
+static void tailRecursion(int n) {
+
+    if (n == 0)
+        return;
+
+    System.out.println(n);
+
+    tailRecursion(n - 1);
+}
