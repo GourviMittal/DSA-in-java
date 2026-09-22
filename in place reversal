@@ -1,0 +1,19 @@
+static DNode reverseDLL(DNode head) {
+
+    DNode current = head;
+    DNode newHead = null;
+
+    while (current != null) {
+
+        DNode temp = current.prev;
+
+        current.prev = current.next;
+        current.next = temp;
+
+        newHead = current;
+
+        current = current.prev;
+    }
+
+    return newHead;
+}
