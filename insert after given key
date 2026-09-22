@@ -1,0 +1,31 @@
+static DNode insertAfter(
+    DNode head,
+    int key,
+    int value
+) {
+
+    DNode temp = head;
+
+    while (
+        temp != null &&
+        temp.data != key
+    ) {
+        temp = temp.next;
+    }
+
+    if (temp == null)
+        return head;
+
+    DNode newNode = new DNode(value);
+
+    newNode.next = temp.next;
+    newNode.prev = temp;
+
+    if (temp.next != null) {
+        temp.next.prev = newNode;
+    }
+
+    temp.next = newNode;
+
+    return head;
+}
