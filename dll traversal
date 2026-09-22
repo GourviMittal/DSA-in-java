@@ -1,0 +1,13 @@
+static void traverse(DNode head) {
+
+    DNode temp = head;
+
+    while (temp != null) {
+
+        System.out.print(temp.data + " <-> ");
+
+        temp = temp.next;
+    }
+
+    System.out.println("null");
+}
